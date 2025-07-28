@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Comic-Con</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
@@ -9,6 +10,7 @@
     html {
       scroll-behavior: smooth;
     }
+
     aside h4 {
       font-family: 'Orbitron', sans-serif;
       border-bottom: 1px solid #ffffff88;
@@ -31,113 +33,113 @@
       object-fit: cover;
     }
 
-    /* Mantiene el menú izquierdo fijo en pantallas grandes */
-@media (min-width: 768px) {
-  .sticky-menu {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-  }
-}
+    /* Sticky en escritorio */
+    @media (min-width: 768px) {
+      .sticky-menu {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+      }
+    }
 
-/* Menú horizontal en pantallas pequeñas */
-.menu-horizontal {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
+    /* Menú horizontal en móviles */
+    .menu-horizontal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
 
-.menu-horizontal {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-  @media (max-width: 767.98px) {
-  .menu-top-fixed {
-    position: sticky;
-    top: 0;
-    z-index: 1030; /* Más alto que el contenido común */
-  }
-}
+    @media (max-width: 767.98px) {
+      .menu-top-fixed {
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+      }
 
-@media (max-width: 767.98px) {
-  main {
-    margin-top: 3rem; /* Ajusta según el alto del menú */
-  }
-}
+      main {
+        margin-top: 3rem;
+      }
 
+      body {
+        padding: 0 1rem;
+      }
+    }
   </style>
 </head>
 <body class="bg-secondary bg-opacity-75 text-white">
 
 <!-- Cabecera -->
 <header class="bg-dark text-white py-3 shadow text-center">
-  <h1 style="font-family: 'Orbitron', sans-serif;"><a href="Comic-Con" class="text-decoration-none text-warning">Comic-Con</a></h1>
+  <h1 style="font-family: 'Orbitron', sans-serif;">
+    <a href="Comic-Con" class="text-decoration-none text-warning">Comic-Con</a>
+  </h1>
 </header>
 
 <!-- Contenedor principal -->
 <div class="container-fluid">
   <div class="row">
 
-    <!-- Menú responsivo -->
-<nav class="bg-dark bg-opacity-75 text-white p-3 sticky-menu col-md-2 d-none d-md-block">
+    <!-- Menú lateral en escritorio -->
+    <nav class="bg-dark bg-opacity-75 text-white p-3 sticky-menu col-md-2 d-none d-md-block">
   <h4 style="font-family: 'Orbitron', sans-serif;"><a href="Menú" class="text-decoration-none text-warning">Menú</a></h4>
-  <ul class="nav flex-column">
-    <li class="nav-item"><a class="nav-link text-white" href="#inicio">Inicio</a></li>
-    <li class="nav-item"><a class="nav-link text-white" href="#eventos">Eventos</a></li>
-    <li class="nav-item"><a class="nav-link text-white" href="#invitados">Invitados</a></li>
-    <li class="nav-item"><a class="nav-link text-white" href="#registro">Registro</a></li>
-    <li class="nav-item"><a class="nav-link text-white" href="#canvas">Lienzo</a></li>
-    <li class="nav-item"><a class="nav-link text-white" href="#contacto">Contacto</a></li>
-  </ul>
-</nav>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link text-white" href="#inicio">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#eventos">Eventos</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#invitados">Invitados</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#registro">Registro</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#canvas">Lienzo</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
 
-<!-- Menú dentro de encabezado en moviles -->
-<div class="bg-dark text-white py-2 d-md-none menu-top-fixed">
-  <div class="menu-horizontal">
-    <a class="text-white text-decoration-none" href="#inicio">Inicio</a>
-    <a class="text-white text-decoration-none" href="#eventos">Eventos</a>
-    <a class="text-white text-decoration-none" href="#invitados">Invitados</a>
-    <a class="text-white text-decoration-none" href="#registro">Registro</a>
-    <a class="text-white text-decoration-none" href="#canvas">Lienzo</a>
-    <a class="text-white text-decoration-none" href="#contacto">Contacto</a>
-  </div>
-</div>
+    <!-- Menú horizontal en móviles -->
+    <div class="bg-dark text-white py-2 d-md-none menu-top-fixed">
+      <div class="menu-horizontal">
+        <a class="text-white text-decoration-none" href="#inicio">Inicio</a>
+        <a class="text-white text-decoration-none" href="#eventos">Eventos</a>
+        <a class="text-white text-decoration-none" href="#invitados">Invitados</a>
+        <a class="text-white text-decoration-none" href="#registro">Registro</a>
+        <a class="text-white text-decoration-none" href="#canvas">Lienzo</a>
+        <a class="text-white text-decoration-none" href="#contacto">Contacto</a>
+      </div>
+    </div>
 
-<!-- Fondo estático de pantalla -->
-<div class="position-fixed top-0 start-0 w-100 h-100 z-n1">
-  <img src="Imagenes/fondo1.JPG" class="w-100 h-100 object-fit-cover" alt="Fondo estático">
-  <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-</div>
+    <!-- Fondo estático -->
+    <div class="position-fixed top-0 start-0 w-100 h-100 z-n1">
+      <img src="imagenes/fondo1.jpg" class="w-100 h-100 object-fit-cover" alt="Fondo estático">
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+    </div>
 
     <!-- Contenido principal -->
-    <main class="col-md-8 bg-dark bg-opacity-50 p-4">
+    <main class="col-12 col-md-8 bg-dark bg-opacity-50 p-4">
       <!-- Inicio -->
       <section id="inicio" class="row mb-5">
-        <div class="col-md-7 bg-dark bg-opacity-75 text-white p-4 rounded shadow" style="text-align: justify;">
+        <div class="col-12 col-md-7 bg-dark bg-opacity-75 text-white p-4 rounded shadow" style="text-align: justify;">
           <h2 class="mb-3">¡Bienvenidos a la Comic Con!</h2>
-          <p>Este año, la Comic Con se engalana con la presencia de auténticas leyendas del entretenimiento. El incomparable Bryan Cranston, mundialmente conocido por su papel como Walter White, ofrecerá un panel exclusivo sobre su carrera y sus nuevos proyectos. A su lado, Hugh Jackman regresará a la convención para hablar de su despedida como Wolverine y su rol en la próxima superproducción de ciencia ficción.</p>
-          <p>Además, contaremos con Steve Downes, la icónica voz del Jefe Maestro en la saga Halo, quien compartirá anécdotas sobre el proceso de doblaje y el impacto cultural del videojuego. La lista de estrellas se extiende con ilustradores de renombre, directores visionarios y talentos emergentes que están redefiniendo la cultura pop. Prepárate para sesiones de preguntas, firmas de autógrafos, y encuentros cercanos con tus ídolos. ¡La magia está garantizada!</p>
+          <p>La Comic Con es el evento más grande del mundo dedicado a la cultura pop, donde los fanáticos pueden disfrutar de paneles, exposiciones y actividades relacionadas con cómics, películas, series de televisión y videojuegos.</p>
+    <p>Desde sus humildes orígenes como una reunión de apasionados por los cómics, la Comic Con ha evolucionado hasta convertirse en el punto de encuentro definitivo para los amantes del cine, la animación, los videojuegos, el cosplay, la literatura fantástica y la cultura geek en todas sus formas.
+    Cada año, héroes, villanos, creadores, artistas y fans cruzan realidades y fronteras para compartir una misma pasión: el poder de las historias. Aquí, no hay límites para la imaginación. Un rincón del multiverso donde puedes ser quien quieras ser, descubrir nuevos universos y celebrar los que ya te cambiaron la vida.
+    Únete a esta edición de la Comic Con y prepárate para vivir paneles exclusivos, talleres creativos, invitados estelares, concursos épicos de cosplay y experiencias inmersivas que harán latir tu corazón fan.
+    Porque en Comic Con, la fantasía no tiene límites… y tú eres parte de ella.</p>
+    <p>Este año, esperamos contar con la presencia de numerosos invitados especiales, incluyendo actores, escritores y artistas de renombre.</p>
         </div>
-        <div class="col-md-5">
-          <div id="carouselInvitados" class="carousel slide h-100" data-bs-ride="carousel">
+        <div class="col-12 col-md-5">
+          <div id="carouselInicio" class="carousel slide h-100" data-bs-ride="carousel">
             <div class="carousel-inner h-100 rounded">
               <div class="carousel-item active h-100">
                 <img src="imagenes/img1.JPG" class="d-block w-100 h-100 object-fit-cover" alt="imagen 1">
               </div>
               <div class="carousel-item h-100">
-                <img src="Imagenes/img2.JPG" class="d-block w-100 h-100 object-fit-cover" alt="imagen 2">
+                <img src="imagenes/img2.JPG" class="d-block w-100 h-100 object-fit-cover" alt="imagen 2">
               </div>
               <div class="carousel-item h-100">
-                <img src="Imagenes/img3.JPG" class="d-block w-100 h-100 object-fit-cover" alt="imagen 3">
+                <img src="imagenes/img3.JPG" class="d-block w-100 h-100 object-fit-cover" alt="imagen 3">
               </div>
             </div>
           </div>
         </div>
-      </section>
       </section>
 
       <!-- Eventos -->
@@ -157,22 +159,22 @@
 
       <!-- Invitados -->
       <section id="invitados" class="row mb-5">
-        <div class="col-md-7 bg-dark bg-opacity-75 text-white p-4 rounded shadow" style="text-align: justify;">
+        <div class="col-12 col-md-7 bg-dark bg-opacity-75 text-white p-4 rounded shadow" style="text-align: justify;">
           <h2 class="mb-3">Conoce a celebridades</h2>
           <p>Este año, la Comic Con se engalana con la presencia de auténticas leyendas del entretenimiento. El incomparable Bryan Cranston, mundialmente conocido por su papel como Walter White, ofrecerá un panel exclusivo sobre su carrera y sus nuevos proyectos. A su lado, Hugh Jackman regresará a la convención para hablar de su despedida como Wolverine y su rol en la próxima superproducción de ciencia ficción.</p>
-          <p>Además, contaremos con Steve Downes, la icónica voz del Jefe Maestro en la saga Halo, quien compartirá anécdotas sobre el proceso de doblaje y el impacto cultural del videojuego. La lista de estrellas se extiende con ilustradores de renombre, directores visionarios y talentos emergentes que están redefiniendo la cultura pop. Prepárate para sesiones de preguntas, firmas de autógrafos, y encuentros cercanos con tus ídolos. ¡La magia está garantizada!</p>
+    <p>Además, contaremos con Steve Downes, la icónica voz del Jefe Maestro en la saga Halo, quien compartirá anécdotas sobre el proceso de doblaje y el impacto cultural del videojuego. La lista de estrellas se extiende con ilustradores de renombre, directores visionarios y talentos emergentes que están redefiniendo la cultura pop. Prepárate para sesiones de preguntas, firmas de autógrafos, y encuentros cercanos con tus ídolos. ¡La magia está garantizada!</p>
         </div>
-        <div class="col-md-5">
+        <div class="col-12 col-md-5">
           <div id="carouselInvitados" class="carousel slide h-100" data-bs-ride="carousel">
             <div class="carousel-inner h-100 rounded">
               <div class="carousel-item active h-100">
-                <img src="Imagenes/invi1.JPG" class="d-block w-100 h-100 object-fit-cover" alt="Invitado 1">
+                <img src="imagenes/invi1.JPG" class="d-block w-100 h-100 object-fit-cover" alt="Invitado 1">
               </div>
               <div class="carousel-item h-100">
-                <img src="Imagenes/invi2.JPG" class="d-block w-100 h-100 object-fit-cover" alt="Invitado 2">
+                <img src="imagenes/invi2.JPG" class="d-block w-100 h-100 object-fit-cover" alt="Invitado 2">
               </div>
               <div class="carousel-item h-100">
-                <img src="Imagenes/invi3.JPG" class="d-block w-100 h-100 object-fit-cover" alt="Invitado 3">
+                <img src="imagenes/invi3.JPG" class="d-block w-100 h-100 object-fit-cover" alt="Invitado 3">
               </div>
             </div>
           </div>
@@ -206,29 +208,27 @@
       </section>
     </main>
 
-    <!-- Lateral -->
-    <aside class="col-md-2 bg-dark p-3 text-center">
-  <h4 style="font-family: 'Orbitron', sans-serif;">
-    <a href="Conoce Más" class="text-decoration-none text-warning">Conoce Más</a>
-  </h4>
+    <!-- Lateral derecho -->
+    <aside class="col-12 col-md-2 bg-dark p-3 text-center">
+      <h4><a href="Conoce Más" class="text-decoration-none text-warning">Conoce Más</a></h4>
 
   <!-- Noticia 1 -->
   <div class="mb-4">
-    <img src="Imagenes/co1.JPG" class="img-fluid rounded mb-2 mx-auto d-block" alt="Portada manga 1">
+    <img src="imagenes/co1.JPG" class="img-fluid rounded mb-2 mx-auto d-block" alt="Portada manga 1">
     <p class="small fw-bold">🌀 Harukaze no Étranger:</p>
     <p class="small text-justify">"Quería mostrar lo que viene después del 'y vivieron felices para siempre'", comentó Kanna Kii en una reciente entrevista. La autora confirmó que está trabajando en un volumen extra con escenas inéditas de Shun y Mio, explorando más a fondo sus desafíos como pareja adulta. El nuevo capítulo especial se publicará este otoño en Japón.</p>
   </div>
 
   <!-- Noticia 2 -->
   <div class="mb-4">
-    <img src="Imagenes/co2.JPG" class="img-fluid rounded mb-2 mx-auto d-block" alt="Portada comic 1">
+    <img src="imagenes/co2.JPG" class="img-fluid rounded mb-2 mx-auto d-block" alt="Portada comic 1">
     <p class="small fw-bold">🃏 Persona 5 Mementos Mission:</p>
     <p class="small text-justify">El mangaka Rokuro Saito reveló en una convención reciente que se está desarrollando una historia adicional centrada en Goro Akechi y su lucha interna con la justicia. "Queríamos dar una visión más personal del metaverso desde su punto de vista", declaró. El especial acompañará una reimpresión de lujo del manga.</p>
   </div>
 
   <!-- Noticia 3 -->
   <div class="mb-4">
-    <img src="Imagenes/co3.JPG" class="img-fluid rounded mb-2 mx-auto d-block" alt="Portada manga 2">
+    <img src="imagenes/co3.JPG" class="img-fluid rounded mb-2 mx-auto d-block" alt="Portada manga 2">
     <p class="small fw-bold">🪖 Halo: Outcasts</p>
     <p class="small text-justify">La editorial Tor Books anunció que Halo: Outcasts, la exitosa novela de Troy Denning, tendrá una continuación directa. "Exploraré las consecuencias políticas entre los Banished y el UNSC tras los eventos del libro", adelantó Denning en un panel. Los fans pueden esperar más acción táctica y una mayor participación de personajes clásicos de la saga.</p>
   </div>
@@ -237,12 +237,12 @@
   </div>
 </div>
 
-<!--Pie de Pagina-->
+<!-- Footer -->
 <footer class="bg-dark text-white mt-5 py-4">
   <div class="container text-center" style="font-family: 'Orbitron', sans-serif;" id="contacto">
-    <p class="mb-1">  Contacto: +503 1234-5678 | +503 8765-4321</p>
-    <p class="mb-1">  Correo: <a href="mailto:info@comicconsv.com" class="text-decoration-none text-warning">info@comicconsv.com</a></p>
-    <p class="mb-0">  Dirección: Final Avenida Peralta N° 903, Contiguo a EXSAL, enfrente del Pollo Campero, San Salvador, El Salvador</p>
+    <p class="mb-1">Contacto: +503 1234-5678 | +503 8765-4321</p>
+    <p class="mb-1">Correo: <a href="mailto:info@comicconsv.com" class="text-decoration-none text-warning">info@comicconsv.com</a></p>
+    <p class="mb-0">Dirección: Final Avenida Peralta N° 903, Contiguo a EXSAL, San Salvador, El Salvador</p>
   </div>
 </footer>
 
